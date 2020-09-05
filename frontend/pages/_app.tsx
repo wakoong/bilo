@@ -1,3 +1,4 @@
+import { AppProps } from "next/app";
 import Page from "../components/styles/Page";
 /**
  * Persisting layout between page changes
@@ -9,10 +10,10 @@ import Page from "../components/styles/Page";
  */
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <React.Fragment>
+    <div>
       <Page />
       <Component {...pageProps} />
-    </React.Fragment>
+    </div>
   );
 };
 
