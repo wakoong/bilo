@@ -1,5 +1,5 @@
 import { AppProps } from "next/app";
-import Page from "../components/styles/Page";
+import Page from "../components/Page";
 /**
  * Persisting layout between page changes
  * Keeping state when navigating pages
@@ -10,10 +10,9 @@ import Page from "../components/styles/Page";
  */
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <div>
-      <Page />
+    <Page>
       <Component {...pageProps} />
-    </div>
+    </Page>
   );
 };
 
