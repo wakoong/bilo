@@ -2,6 +2,7 @@ import * as React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 
 import Meta from "./Meta";
+import Header from "./Header";
 
 const theme = {
   black: "#14130e",
@@ -46,6 +47,7 @@ const Page = ({ children }) => {
     <ThemeProvider theme={theme}>
       <StyledPage>
         <Meta />
+        <Header />
         <Inner>{children}</Inner>
       </StyledPage>
       <GlobalStyle />
