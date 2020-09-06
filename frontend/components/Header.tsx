@@ -1,28 +1,28 @@
 import styled from "styled-components";
+import Nav from "./Nav";
+import useToggle from "../hooks/useToggle";
 
 const Logo = styled.div`
+  display: flex;
+  align-items: stretch;
+  height: 10rem;
+  width: 20rem;
+  img {
+    height: 100%;
+    width: 50%;
+  }
   :hover {
     opacity: 0.7;
   }
 `;
 
 const StyledHeader = styled.header`
-  img {
-    height: 10rem;
-    width: 10rem;
-  }
   .bar {
     background: ${props => props.theme.brown};
-    border-bottom: 2px solid ${props => props.theme.white};
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    height: 10rem;
-
-    @media (max-width: ${props => props.theme.maxWidth}) {
-      grid-template-columns: 1fr;
-      justify-content: center;
-    }
+    height: auto;
   }
 `;
 
@@ -36,6 +36,7 @@ const Header = () => {
             <img src="../static/milo.png" alt="milo" />
           </a>
         </Logo>
+        <Nav />
       </div>
       <div className="sub-bar">subbar</div>
     </StyledHeader>

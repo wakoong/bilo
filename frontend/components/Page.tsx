@@ -8,6 +8,7 @@ const theme = {
   black: "#14130e",
   brown: "#d5995a",
   white: "#ebeef0",
+  midWidth: "770px",
   maxWidth: "1440px"
 };
 
