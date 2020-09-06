@@ -6,3 +6,4 @@ node_modules/
 .next/
 .build/
 variables.env
+next-env.d.ts
