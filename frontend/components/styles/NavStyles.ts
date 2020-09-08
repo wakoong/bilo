@@ -1,41 +1,41 @@
 import styled from "styled-components";
 
 const NavStyles = styled.nav`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-self: end;
-  cursor: pointer;
+  position: absolute;
+  background: ${props => props.theme.white};
+  top: 0;
+  width: 100%;
+  height: 60rem;
 
-  .inline-menu {
-    display: none;
-  }
-
-  @media (min-width: ${props => props.theme.midWidth}) {
-    .hamburger {
-      display: none;
-    }
-    .inline-menu {
-      display: flex;
-    }
-  }
-
-  a,
-  button {
-    padding: 1rem 3rem;
+  .container {
+    position: relative;
     display: flex;
     align-items: center;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 1em;
+    height: 10rem;
+    padding: 0.5rem 2rem;
+    margin: 0 auto;
+  }
 
-    &:hover,
-    &:focus {
-      outline: none;
-      opacity: 0.7;
-    }
+  @media (min-width: ${props => props.theme.maxWidth}) {
+    height: 70rem;
   }
 `;
 
-export default NavStyles;
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    height: 7rem;
+  }
+
+  h2 {
+    font-family: monospace;
+    color: ${props => props.theme.brown};
+  }
+
+  h2:last-child {
+    color: ${props => props.theme.black};
+  }
+`;
+
+export { NavStyles, Logo };
