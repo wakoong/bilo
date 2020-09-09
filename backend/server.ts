@@ -1,23 +1,57 @@
 const { ApolloServer, gql } = require("apollo-server");
 
-const users = [{ username: "example1" }, { username: "example2" }];
+const users = [
+  { name: "example1", email: "email@email.com" },
+  { name: "example2", email: "email2@email.com" },
+];
 
 const typeDefs = gql`
+  enum Role {
+    ADMIN
+    MEMBER
+    GUEST
+  }
+
   type User {
     id: ID!
-    username: String!
+    name: String!
+    email: String!
+    verified: Boolean!
+    createAt: String!
+    updatedAt: String!
+    role: Role!
+  }
+
+  type AuthUser {
+    token: String!
+    user: User!
+  }
+
+  input SignupInput {
+    email: String!
+    password: String!
+    role: Role!
+  }
+
+  input SigninInput {
+    email: String!
+    password: String!
   }
 
   type Query {
-    users: [User]
+    me: User!
+    users: [User]!
+  }
+
+  type Mutation {
+    signup(input: SignupInput!): AuthUser!
+    signin(input: SigninInput!): AuthUser!
   }
 `;
+
 const resolvers = {
   Query: {
-    users: () => {
-      console.log("resolvers");
-      return users;
-    },
+    users: () => users,
   },
 };
 
