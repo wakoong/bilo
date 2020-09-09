@@ -20,4 +20,4 @@ const connectDb = () => {
 const db = mongoose.connection;
 db.on("error", () => console.error("MongoDB connection error"));
 
-module.exports = { connectDb };
+module.exports = connectDb;
