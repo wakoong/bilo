@@ -1,4 +1,8 @@
 const { ApolloServer, gql } = require("apollo-server");
+const connectDb = require("./config/db.ts");
+const models = require("./models");
+
+connectDb();
 
 const users = [
   { name: "example1", email: "email@email.com" },
@@ -51,13 +55,20 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    users: () => users,
+    me(_, __, { user }) {
+      return user;
+    },
+  },
+  Mutation: {
+    signup(_, { input }, { models, createToken }) {},
+    signin(_, { input }, { models, createToken }) {},
   },
 };
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: { models },
 });
 
 server.listen().then(({ url }) => {
