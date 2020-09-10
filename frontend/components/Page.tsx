@@ -38,8 +38,10 @@ const StyledPage = styled.div`
 `;
 
 const Inner = styled.div`
-  padding: 2rem;
-  margin: 0 auto;
+  display: grid;
+  position: relative;
+  padding: 10rem 2rem;
+  margin: 0 auo;
 `;
 
 const Page = ({ children }) => {

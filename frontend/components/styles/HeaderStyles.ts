@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 const HeaderStyles = styled.header`
   position: relative;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
