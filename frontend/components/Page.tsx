@@ -16,6 +16,13 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 10px;
+
+    @media (min-width: ${props => props.theme.midWidth}) {
+      font-size: 12px;
+    }
+    @media (min-width: ${props => props.theme.maxWidth}) {
+      font-size: 14px;
+    }
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -23,8 +30,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.4em;
     line-height: 2;
+  }
+  p {
+    margin: 0;
   }
   a {
     text-decoration: none;
