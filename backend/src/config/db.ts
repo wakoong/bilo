@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+export {};
 const mongoose = require("mongoose");
 const DATABASE_URL = process.env.DATABASE_URL;
 

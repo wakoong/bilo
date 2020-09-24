@@ -1,17 +1,11 @@
-const { ApolloServer } = require("apollo-server");
-const connectDb = require("./config/db.ts");
-const models = require("./models/index.ts");
-const resolvers = require("./resolvers/index.ts");
-const typeDefs = require("./types/userType.ts");
+import express from "express";
+import mongoose from "mongoose";
 
-connectDb();
+const server = () => {
+  const app = express();
+  app.listen({ port: 4001 }, () => {
+    console.log("connected");
+  });
+};
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: { models },
-});
-
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+server();
